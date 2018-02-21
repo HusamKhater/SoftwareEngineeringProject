@@ -1,0 +1,8 @@
+{
+"host":"192.168.1.17",
+"port":"8080",
+"lotName":"Carmel",
+"width":"8",
+"cpsemail":"cps.team4@gmail.com",
+"cpsemailpassword":"200200200"
+}

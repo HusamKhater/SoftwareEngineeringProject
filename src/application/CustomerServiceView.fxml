@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CustomerServiceController">
+   <center>
+      <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="80.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../profile-pictures.png" />
+                     </image>
+                  </ImageView>
+                  <Label styleClass="label-first" stylesheets="@application.css" text="Name:">
+                     <HBox.margin>
+                        <Insets left="10.0" top="25.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text fx:id="textInTopOfLogIn" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <HBox.margin>
+                        <Insets left="5.0" top="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="320.0">
+                     <children>
+                        <Button fx:id="signOutButton" mnemonicParsing="false" onAction="#signOut" styleClass="sign-out-button" stylesheets="@application.css" text="Sign Out">
+                           <HBox.margin>
+                              <Insets top="17.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <StackPane prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <BorderPane fx:id="HandlingComplaintsCustomerServiceBorderPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+                     <center>
+                        <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <StackPane alignment="TOP_LEFT" prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: #7499b5;">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7499b5" height="20.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+                                    <HBox prefHeight="20.0" prefWidth="600.0">
+                                       <children>
+                                          <Label prefWidth="50.0" text="Res ID">
+                                             <font>
+                                                <Font name="System Bold" size="10.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label layoutX="162.0" layoutY="10.0" prefWidth="80.0" text="Car Number">
+                                             <font>
+                                                <Font name="System Bold" size="10.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label layoutX="195.0" layoutY="12.0" prefWidth="80.0" text="Lot Name">
+                                             <font>
+                                                <Font name="System Bold" size="10.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label layoutX="15.0" layoutY="12.0" prefWidth="80.0" text="Status">
+                                             <font>
+                                                <Font name="System Bold" size="10.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" top="1.5" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </StackPane>
+                              <VBox prefHeight="502.0" prefWidth="600.0">
+                                 <children>
+                                    <ScrollPane prefHeight="522.0" prefWidth="600.0">
+                                       <content>
+                                          <VBox fx:id="complaintsListVBox" prefWidth="570.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="ParkingReservationCustomerServiceBorderPane" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+                     <center>
+                        <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Car Number:">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="CusSerParkingReservationCarNumberTF" styleClass="text-field-first" stylesheets="@application.css">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Credit Card Id:">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="CusSerParkingReservationCreditCardIdTF" styleClass="text-field-first" stylesheets="@application.css">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Arriving Hour:" />
+                                    <ComboBox id="#hour-minutes-combo" fx:id="CusSerparkResArrivingHourComboBox" prefWidth="78.0" promptText="Hour" stylesheets="@application.css" />
+                                    <ComboBox fx:id="CusSerparkResArrivingMinuteComboBox" prefWidth="78.0" promptText="Minutes" stylesheets="@application.css">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="30.0" layoutY="77.0" prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Leaving Hour:" />
+                                    <ComboBox id="#hour-minutes-combo" fx:id="CusSerparkResLeavingHourComboBox" prefWidth="78.0" promptText="Hour" stylesheets="@application.css" />
+                                    <ComboBox fx:id="CusSerparkResLeavingMinuteComboBox" prefWidth="78.0" promptText="Minutes" stylesheets="@application.css">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="30.0" layoutY="134.0" prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Arriving Date:" />
+                                    <DatePicker fx:id="CusSerparkResArrivingDateDP" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="30.0" layoutY="191.0" prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Leaving Date:" />
+                                    <DatePicker fx:id="CusSerparkResLeavingDateDP" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="30.0" layoutY="248.0" prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Parking Lot Name:" />
+                                    <ComboBox fx:id="CusSerparkResComboBox" prefWidth="150.0" promptText="select parking name" stylesheets="@application.css" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="CusSerparkResReserveParkingButton" mnemonicParsing="false" onAction="#CustomerServiceParkingReservation" styleClass="go-button" stylesheets="@application.css" text="Reserve" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="600.0" prefWidth="203.0" style="-fx-background-color: #2d6ea3;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="HandlingComplaintsButton" mnemonicParsing="false" onAction="#loadHandlingComplaints" prefHeight="40.0" prefWidth="200.0" styleClass="loginView-buttons" stylesheets="@application.css" text="Handling Complaints">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="parkingReservationButton" mnemonicParsing="false" onAction="#loadParkingReservation" prefHeight="40.0" prefWidth="200.0" styleClass="loginView-buttons" stylesheets="@application.css" text="Parking Reservation " visible="false">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <StackPane prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a304e" height="100.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+            <Label fx:id="welcomeBanner" styleClass="label-welcome" stylesheets="@application.css" text="Label" textFill="#8a4141" />
+         </children>
+      </StackPane>
+   </top>
+</BorderPane>

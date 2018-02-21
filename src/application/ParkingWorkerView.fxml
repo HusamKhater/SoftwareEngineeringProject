@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ParkingWorkerController">
+   <center>
+      <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="80.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../profile-pictures.png" />
+                     </image>
+                  </ImageView>
+                  <Label styleClass="label-first" stylesheets="@application.css" text="Name:">
+                     <HBox.margin>
+                        <Insets left="10.0" top="25.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text fx:id="textInTopOfLogIn" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <HBox.margin>
+                        <Insets left="5.0" top="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="320.0">
+                     <children>
+                        <Button fx:id="signOutButton" mnemonicParsing="false" onAction="#signOut" styleClass="sign-out-button" stylesheets="@application.css" text="Sign Out">
+                           <HBox.margin>
+                              <Insets top="17.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <StackPane prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <BorderPane fx:id="AlternativeParkingParkingLotWorkerBorderPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+                     <center>
+                        <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="137.0" styleClass="label-first" stylesheets="@application.css" text="Car Number:" />
+                                    <TextField fx:id="AlternativeParkingCarNumberTF" styleClass="text-field-first" stylesheets="@application.css">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="137.0" styleClass="label-first" stylesheets="@application.css" text="Order Id:" />
+                                    <TextField fx:id="alternativeParkingReservationIdTF" styleClass="text-field-first" stylesheets="@application.css">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="137.0" styleClass="label-first" stylesheets="@application.css" text="Parking Lot:" />
+                                    <ComboBox fx:id="alternativeComboBox" prefWidth="150.0" promptText="select parking name" stylesheets="@application.css" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="18.0" prefWidth="580.0" />
+                              <HBox prefHeight="50.0" prefWidth="100.0">
+                                 <children>
+                                    <Button fx:id="alternativeParkingReToAlterParkButton" mnemonicParsing="false" onAction="#ReferenceToAlternativeParking" styleClass="go-button" stylesheets="@application.css" text="Reference to Alternative Parking" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" top="10.0" />
+                           </padding>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="IntitializationParkingLotWorkerBorderPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+                     <center>
+                        <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="600.0" />
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="600.0" />
+                              <HBox prefHeight="18.0" prefWidth="580.0" />
+                              <HBox prefHeight="188.0" prefWidth="577.0" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" top="10.0" />
+                           </padding>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="ParkingReservationParkingLotWorkerBorderPane" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+                     <center>
+                        <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Spot Id:">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ComboBox id="#hour-minutes-combo" fx:id="reserveHeightComboBox" prefWidth="78.0" promptText="Height" stylesheets="@application.css" />
+                                    <ComboBox fx:id="reserveWidthComboBox" prefWidth="78.0" promptText="Width " stylesheets="@application.css" />
+                                    <ComboBox id="#hour-minutes-combo" fx:id="reserveDepthComboBox" prefWidth="78.0" promptText="Depth" stylesheets="@application.css" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Button fx:id="reserveParkingByWorkerButton" mnemonicParsing="false" onAction="#reserveParkingByWorker" styleClass="go-button" stylesheets="@application.css" text="Reserve Parking Spot" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <StackPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7499b5" height="30.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+                                    <HBox prefHeight="30.0" prefWidth="600.0">
+                                       <children>
+                                          <Label prefWidth="80.0" text="Height">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefWidth="80.0" text="Width">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefWidth="80.0" text="Depth">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" top="7.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </StackPane>
+                              <ScrollPane prefHeight="400.0" prefWidth="600.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox fx:id="reservedByWorkerSpotsVB" prefHeight="360.0" prefWidth="590.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="DiabledParkingSpotParkingBorderPane" prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+                     <center>
+                        <VBox prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefWidth="110.0" styleClass="label-first" stylesheets="@application.css" text="Spot Id:">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ComboBox id="#hour-minutes-combo" fx:id="HeightComboBox" prefWidth="78.0" promptText="Height" stylesheets="@application.css" />
+                                    <ComboBox fx:id="WidthComboBox" prefWidth="78.0" promptText="Width " stylesheets="@application.css" />
+                                    <ComboBox id="#hour-minutes-combo" fx:id="DepthComboBox" prefWidth="78.0" promptText="Depth" stylesheets="@application.css" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox layoutX="30.0" layoutY="191.0" prefHeight="50.0" prefWidth="600.0">
+                                 <children>
+                                    <Button fx:id="ParkingWorkerDisabledParkingSpotButton" mnemonicParsing="false" onAction="#disabledParkingSpot" styleClass="go-button" stylesheets="@application.css" text="Disabled Parking Spot" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <StackPane prefHeight="30.0" prefWidth="600.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7499b5" height="30.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+                                    <HBox prefHeight="30.0" prefWidth="600.0">
+                                       <children>
+                                          <Label prefWidth="80.0" text="Height">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefWidth="80.0" text="Width">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefWidth="80.0" text="Depth">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="7.0" />
+                                       </padding>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </StackPane>
+                              <ScrollPane prefHeight="400.0" prefWidth="600.0">
+                                 <content>
+                                    <VBox fx:id="disabledByWorkerSpotsVB" prefHeight="350.0" prefWidth="590.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="600.0" prefWidth="203.0" style="-fx-background-color: #2d6ea3;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="parkingReservationButton" mnemonicParsing="false" onAction="#loadParkingReservation" prefHeight="40.0" prefWidth="200.0" styleClass="loginView-buttons" stylesheets="@application.css" text="Parking Reservation">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="disabledParkingSpotButton" mnemonicParsing="false" onAction="#loadDisabledParkingSpot" prefHeight="40.0" prefWidth="200.0" styleClass="loginView-buttons" stylesheets="@application.css" text="Disabled Parking Spot">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="IntitializationButton" mnemonicParsing="false" onAction="#InitializeParkingLot" prefHeight="40.0" prefWidth="200.0" styleClass="loginView-buttons" stylesheets="@application.css" text="Initialize Parking Lot">
+            	<VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="alternativeParkButton" mnemonicParsing="false" onAction="#BlockParkingLot" prefHeight="40.0" prefWidth="200.0" styleClass="loginView-buttons" stylesheets="@application.css" text="Block Parking Lot"/>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <StackPane prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a304e" height="100.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+            <Label fx:id="welcomeBanner" styleClass="label-welcome" stylesheets="@application.css" text="Label" textFill="#8a4141" />
+         </children>
+      </StackPane>
+   </top>
+</BorderPane>
