@@ -1,5 +1,5 @@
 # SoftwareEngineeringProject
-Car parking system, managing and operating parking lots in the city, including several permissions, Client, System worker, Customer service, parking lot director and adminstrator.
+Car parking system, managing and operating parking lots in the city, including several permissions, Client, System worker, Customer service, parking lot director and administrator.
 
 Client side using JavaFX.
 
